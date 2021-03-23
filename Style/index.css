@@ -1,0 +1,78 @@
+/*La totalité des balises utilisées proviennent du site https://developer.mozilla.org/ ou du cours de Techno Web.*/
+/*Les commandes ont été pensées pour une bonne structure de la page ainsi qu'une bonne accessibilté aux informations transmises.*/
+
+body {
+    background: url("../Image/voiture_sion.jpg");
+  	background-size: cover;
+  	background-repeat: no-repeat;
+  	background-position: center;
+  	background-attachment: fixed;
+/*L'image d'arrière-plan est percue totalement de manière fixe même si nous réduisons ou agrandissons le navigateur web. Cela rend mieux selon moi*/
+}
+video {
+	border: solid black 3px;
+	max-width: 95%;
+/*La bordure rend plus jolie la page, ainsi qu'une meilleure insertion de la vidéo*/
+}
+section img {
+	border-style:none;
+}
+footer p:first-of-type a {
+	color:white;
+}
+footer a {
+	color:#FFE436;
+}
+#Intro{
+	display:grid;
+	grid-template-columns:1fr 1fr;
+	grid-template-rows: 9.154in;
+	grid-gap:10px;
+	text-align:center;
+	align-items: center;
+/*Elements centrés dans leur bloc pour une bonne lisibilité de haut en bas*/
+	transition:all 0.5s ease-out;
+/*Sans cette transition, nous ne voyons pas nettement le logo Sion ainsi que le texte en blanc. J'ai décidé alors d'insérer cela pour une meilleure accessibilité aux informations*/
+}
+#Intro:hover {
+	background-color: rgba(40, 40, 40, 0.5);
+/*Je laisse ici une transparence afin de toujours percevoir l'image d'arrire-plan*/
+}
+#main {
+	transition:all 0.5s ease-out;
+	padding-top: 1em;
+	padding-bottom: 1em;
+/*Même commentaire que celui de .conteneur*/
+}
+#main:hover{
+	background-color: rgba(40, 40, 40, 0.5);
+/*Même commentaire que celui de .contenur:hover*/
+}
+#Galerie {
+	padding-left:3em;
+}
+#Galerie img {
+	margin: 1em 3em 0.5em 0; /*Haut - Droite - Bas - Gauche*/
+  	transition: 3s ease-out; /*Transition dure 3s rapide début lent fin*/
+  	filter: grayscale(100%); /*Image noir et blanc*/
+}
+#Galerie img:hover {
+	transform: scale(1.2);
+  	filter: grayscale(0); /*Image couleur*/
+}
+@media (max-width: 81em){
+	#Galerie img {
+		height:300px;
+		width:300px;
+	}
+}
+@media (max-width: 40em){
+	#Intro {
+		display:block;
+	}
+}
+@media (max-width: 400px){
+	#Galerie {
+		display:none;
+	}
+}
