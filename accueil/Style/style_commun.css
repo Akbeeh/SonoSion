@@ -1,0 +1,173 @@
+/*La totalité des balises utilisées proviennent du site https://developer.mozilla.org/ ou du cours de Techno Web.*/
+/*Les commandes ont été pensées pour une bonne structure de la page ainsi qu'une bonne accessibilté aux informations transmises.*/
+
+.menu {
+ 	text-align: center;
+}
+.menu .categorie {
+ 	display: inline-block;
+/*Menu horizontal*/
+}
+.menu .categorie ul {
+ 	display: none;
+ 	position: absolute;
+ 	padding: 0;
+ 	margin: 0;
+ 	list-style: none;
+/*Pas de points pour la liste ; sur le menu nous ne voyons que les titres de section ; position absolute pour dire que les enfants auront les mêmes propriétés que leurs parents*/
+}
+.menu .categorie:hover ul {
+ 	display: block;
+/*Lorsque nous passons avec notre souris sur les titres du menu, le bloc de liste (que nous pouvons dire des sous-titres) apparait en dessous du titre*/
+}
+
+.menu h3,
+.menu a {
+ 	display: block;
+ 	margin: 0;
+ 	padding: 0.3em 0;
+ 	font-size: x-large;
+ 	color: white;
+	background: rgba(80, 80, 80, 0.5);;
+ 	text-decoration: none;
+ 	box-sizing: border-box;
+ 	width: 14.5em;
+/*Le menu est bien un bloc, le menu remplit toute la largeur de la page, en background, j'ai mis une couleur grisée pour insister sur la présence(attirance) du menu en haut de page*/
+}
+.menu h3:hover,
+.menu a:hover {
+ 	color: #357AB7;
+  	text-shadow: 1px 1px 1px;
+ 	background-color: rgba(80, 80, 80, 0.5);
+	border-radius: 10px;
+/*Opacité présente avec coin arrondie lorsque l'utilisateur passe la souris sur le lien auquel il souhaite se rediriger ; un élément de style de page sympa également avec la couleur darkblue sur les titres/sous-titres*/
+}
+.menu h3:before {
+	content:none;
+}
+.Affichage {
+	display:grid;
+	grid-template-columns: 1fr 1fr;
+	text-align: center;
+	width:100%;
+/*Deux colonnes séparant l'affiche et l'article puisque float est interdit*/
+}
+.Article {
+	align-self: center;
+}
+@font-face {
+    font-family:'../Font/Nexa_Free_Bold';
+    src: url('../Font/Nexa_Free_Bold-webfont.woff2') format('woff2'),
+         url('../Font/Nexa_Free_Bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+	font-family:'../Font/Nexa_Free_Bold', Arial, "Times New Roman", "Comic Sans MS", sans-serif;
+/*Utilisation de la police téléchargée pour rendre le site plus "attractif" à lire.*/
+	background-color : #24445c;
+	color : white;
+	font-size: x-large;
+	width:100%;
+	margin: 0;
+	text-align: justify;
+}
+section:not(.categorie) {
+	padding-right: 3em;
+	padding-left: 3em;
+/*Toutes les sections en excluant ceux qui sont de la classe .categorie ont un padding right et left de 3em.*/
+}
+section img {
+	display:block;
+	align-items: center;
+}
+section h3:before {
+	content:"◈";
+}
+/*Effet décoratif sympathique devant les titres h3 de section. Cela permet plus facilement de différencier les parties.*/
+h3 {
+	padding-left: 1em;
+}
+/*Effet décalé par rapport au texte, montre que c'est un titre de section.*/
+h4 {
+	display:none;
+}
+article {
+	padding-left: 3em;
+}
+article p,figure {
+	padding-right: 3em;
+}
+/*J'ai souhaité que la mention "Pour plus d'infos, voir la page..." soit alignés avec la référence au créateur du site*/
+ul {
+	list-style-type:none;
+}
+img {
+	border:solid black 3px;
+	max-width: 90%;
+	margin:auto;
+/*Logo, image de taille adéquat et centré avec le texte dans le bloc*/
+}
+figure {
+	display:block;
+	margin:auto;
+	text-align: center;
+/*Texte au centre, se rétrécit en réduisant le navigateur web et inversement, bonne structure dans la page*/
+}
+table {
+	margin:auto;
+	text-align: center;
+}
+a {
+	color:#318CE7;
+}
+footer p:first-of-type {
+	text-align: center;
+	text-decoration: underline;
+	font-size: x-large;
+}
+/*Cela constitue les redirections vers : Page précédente | Haut de page | Accueil | Page suivante.*/
+footer p:nth-of-type(2){
+	text-align: justify;
+	font-size: x-large;
+	font-weight:bold;
+	text-decoration: underline;
+}
+footer, footer p:last-of-type {
+	font-size:large;
+	font-style:oblique;
+	font-weight: bold;
+	text-align:end;
+	color:black;
+	text-decoration: underline;
+/*Indication sur moi même, créateur de ce site avec redirection vers ma page d'étudiant de l'Université de Caen (E-campus)*/
+/*"Pour plus d'informations, veuillez vous rediriger sur *page concernée*"*/
+}
+@media (max-width: 44.8em){
+	.menu .categorie:hover ul {
+ 		display: none;
+ 	}
+}
+@media (max-width: 40em){
+	body {
+		font-size: medium;
+	}
+	footer, footer p:nth-of-type(2), footer a {
+		font-size: medium;
+	}
+	.Affichage{
+		display:block;
+	}
+/*Réduction de la taille de la police afin qu'il y ait plus de clarté*/
+}
+@media (max-width: 323px){
+	.menu .categorie {
+ 		display: block;
+	}
+	body {
+		font-size: x-small;
+	}
+	footer, footer p:nth-of-type(2), footer a {
+		font-size: x-small;
+ 	}
+}
